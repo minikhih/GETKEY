@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniKS - Get Key Tự Động</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@500;700;900&display=swap');
+        body {
+            background: linear-gradient(135deg, #06080e 0%, #0f1322 50%, #030408 100%);
+            color: #fff; font-family: 'Orbitron', sans-serif;
+            height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0;
+        }
+        .card {
+            background: rgba(10, 12, 22, 0.95); border: 2px solid #00ffcc;
+            box-shadow: 0 0 35px rgba(0, 255, 204, 0.4); padding: 40px; border-radius: 12px;
+            width: 380px; text-align: center; box-sizing: border-box;
+        }
+        h1 { font-family: 'Press Start 2P'; font-size: 13px; color: #00ffcc; text-shadow: 0 0 10px rgba(0,255,204,0.6); margin-bottom: 20px; }
+        p { font-size: 11px; color: #8899aa; margin-bottom: 25px; line-height: 1.6; }
+        .btn {
+            width: 100%; padding: 14px; background: #00ffcc; color: #000; border: none;
+            border-radius: 8px; font-weight: 900; font-family: 'Press Start 2P'; font-size: 9px;
+            cursor: pointer; box-shadow: 0 0 15px rgba(0,255,204,0.4); transition: 0.2s; text-decoration: none; display: inline-block; box-sizing: border-box; margin-bottom: 12px;
+        }
+        .btn:hover { background: #00cca3; box-shadow: 0 0 25px rgba(0,255,204,0.8); }
+        #key-box {
+            margin-top: 15px; padding: 12px; background: rgba(0,0,0,0.6); border: 1px dashed #00ffcc;
+            border-radius: 8px; font-size: 13px; color: #00ffcc; font-weight: bold; word-break: break-all; display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>MINIKS GET KEY</h1>
+        <p>Hoàn thành vượt link rút gọn bên dưới để nhận ngẫu nhiên một mã bản quyền từ kho của MiniKS.</p>
+        
+        <!-- Nút 1: Link vượt quảng cáo của bạn (Linkvertise, Work.ink, v.v.) -->
+        <a href="https://link-rut-gon-cua-ban.com" class="btn" target="_blank">1. VƯỢT LINK LẤY KEY</a>
+        
+        <!-- Nút 2: Lấy key ngẫu nhiên từ kho lưu trữ trên GitHub -->
+        <button id="get-key-btn" class="btn" style="background: #ff0055; color: #fff; box-shadow: 0 0 15px rgba(255,0,85,0.4);">2. LẤY KEY NGAY</button>
+        
+        <div id="key-box">Đang tải key...</div>
+    </div>
+
+    <script>
+        // Tạo một tệp danh sách key trực tiếp trên GitHub hoặc nhúng thẳng danh sách ở đây
+        const keyList = [
+            "MINIKS-A1B2-C3D4-E5F6",
+            "MINIKS-Z9Y8-X7W6-V5U4",
+            "MINIKS-HELLO-WORLD-2026",
+            "MINIKS-EVOWARS-VIP-999"
+            // Alpha có thể dán danh sách hàng chục key đã tạo từ KeyAuth vào đây
+        ];
+
+        document.getElementById('get-key-btn').addEventListener('click', () => {
+            const keyBox = document.getElementById('key-box');
+            keyBox.style.display = "block";
+            
+            // Lẫu ngẫu nhiên 1 key trong mảng danh sách trên
+            const randomKey = keyList[Math.floor(Math.random() * keyList.length)];
+            
+            keyBox.innerHTML = `Key của bạn:<br><b style="color: #fff; font-size: 15px; user-select: all;">${randomKey}</b><br><span style="font-size: 8px; color: #00ffcc;">(Bấm vào để copy dán vào game)</span>`;
+        });
+    </script>
+</body>
+</html>
